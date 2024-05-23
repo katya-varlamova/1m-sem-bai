@@ -1,0 +1,180 @@
+<mxfile host="app.diagrams.net" modified="2023-12-15T08:57:55.882Z" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_6) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.0.2 Safari/605.1.15" etag="jEVSXdaOkjPkj_uugEp_" version="22.1.9" type="google" pages="2">
+  <diagram id="14jalQdAWdDQ5VtuvgaP" name="idef0">
+    <mxGraphModel grid="1" page="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" pageScale="1" pageWidth="3300" pageHeight="4681" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="VAYFtHmRZGBhSnjjBrDM-3" value="Система автопилота" style="rounded=0;whiteSpace=wrap;html=1;fontSize=14;" vertex="1" parent="1">
+          <mxGeometry x="350" y="210" width="200" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="VAYFtHmRZGBhSnjjBrDM-4" value="" style="endArrow=classic;html=1;fontSize=14;entryX=0.25;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="1" target="VAYFtHmRZGBhSnjjBrDM-3">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="400" y="350" as="sourcePoint" />
+            <mxPoint x="460" y="300" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="VAYFtHmRZGBhSnjjBrDM-5" value="Алгортм &lt;br&gt;нечеткого &lt;br&gt;вывода" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=14;" vertex="1" connectable="0" parent="VAYFtHmRZGBhSnjjBrDM-4">
+          <mxGeometry x="-0.469" y="-3" relative="1" as="geometry">
+            <mxPoint x="-3" y="31" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="VAYFtHmRZGBhSnjjBrDM-8" value="" style="endArrow=classic;html=1;fontSize=14;entryX=0.132;entryY=-0.027;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="390" y="122.7" as="sourcePoint" />
+            <mxPoint x="390.4000000000001" y="209.99999999999994" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="VAYFtHmRZGBhSnjjBrDM-9" value="Функции &lt;br&gt;принадлежности" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=14;" vertex="1" connectable="0" parent="VAYFtHmRZGBhSnjjBrDM-8">
+          <mxGeometry x="-0.469" y="-3" relative="1" as="geometry">
+            <mxPoint y="-23" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="VAYFtHmRZGBhSnjjBrDM-12" value="" style="endArrow=classic;html=1;fontSize=14;entryX=0.015;entryY=0.1;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" target="VAYFtHmRZGBhSnjjBrDM-3">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="190" y="220" as="sourcePoint" />
+            <mxPoint x="386.4000000000001" y="217.83999999999992" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="VAYFtHmRZGBhSnjjBrDM-13" value="Растояние до лидера" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=14;" vertex="1" connectable="0" parent="VAYFtHmRZGBhSnjjBrDM-12">
+          <mxGeometry x="-0.469" y="-3" relative="1" as="geometry">
+            <mxPoint x="17" y="-13" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="VAYFtHmRZGBhSnjjBrDM-14" value="" style="endArrow=classic;html=1;fontSize=14;entryX=0.015;entryY=0.87;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" target="VAYFtHmRZGBhSnjjBrDM-3">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="200" y="297" as="sourcePoint" />
+            <mxPoint x="350" y="270" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="VAYFtHmRZGBhSnjjBrDM-15" value="Целевое рассточние" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=14;" vertex="1" connectable="0" parent="VAYFtHmRZGBhSnjjBrDM-14">
+          <mxGeometry x="-0.469" y="-3" relative="1" as="geometry">
+            <mxPoint x="10" y="-13" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="VAYFtHmRZGBhSnjjBrDM-16" value="" style="endArrow=classic;html=1;fontSize=14;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" edge="1" parent="1" source="VAYFtHmRZGBhSnjjBrDM-3">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="550" y="220" as="sourcePoint" />
+            <mxPoint x="700" y="260" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="VAYFtHmRZGBhSnjjBrDM-17" value="Новая скорость автопилота" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=14;" vertex="1" connectable="0" parent="VAYFtHmRZGBhSnjjBrDM-16">
+          <mxGeometry x="-0.469" y="-3" relative="1" as="geometry">
+            <mxPoint x="60" y="-23" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="VAYFtHmRZGBhSnjjBrDM-22" value="А0" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;fontSize=14;" vertex="1" parent="1">
+          <mxGeometry x="520" y="290" width="30" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="vrVetiJNJIV0gFWiRDe9-1" value="" style="endArrow=classic;html=1;fontSize=14;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" target="VAYFtHmRZGBhSnjjBrDM-3">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="200" y="260" as="sourcePoint" />
+            <mxPoint x="350" y="240" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="vrVetiJNJIV0gFWiRDe9-2" value="Изменение расстояния" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=14;" vertex="1" connectable="0" parent="vrVetiJNJIV0gFWiRDe9-1">
+          <mxGeometry x="-0.469" y="-3" relative="1" as="geometry">
+            <mxPoint y="-13" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="vrVetiJNJIV0gFWiRDe9-5" value="" style="endArrow=classic;html=1;fontSize=14;entryX=0.25;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="400" y="350" as="sourcePoint" />
+            <mxPoint x="400" y="310" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="vrVetiJNJIV0gFWiRDe9-6" value="Алгортм &lt;br&gt;нечеткого &lt;br&gt;вывода" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=14;" vertex="1" connectable="0" parent="vrVetiJNJIV0gFWiRDe9-5">
+          <mxGeometry x="-0.469" y="-3" relative="1" as="geometry">
+            <mxPoint x="-3" y="31" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="vrVetiJNJIV0gFWiRDe9-7" value="" style="endArrow=classic;html=1;fontSize=14;entryX=0.75;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="1" target="VAYFtHmRZGBhSnjjBrDM-3">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="500" y="350" as="sourcePoint" />
+            <mxPoint x="410" y="320" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="vrVetiJNJIV0gFWiRDe9-8" value="Алгортм &lt;br&gt;дефаззификации" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=14;" vertex="1" connectable="0" parent="vrVetiJNJIV0gFWiRDe9-7">
+          <mxGeometry x="-0.469" y="-3" relative="1" as="geometry">
+            <mxPoint x="-3" y="31" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="6PhLNVi6m-bx_EunW-_f-2" value="" style="endArrow=classic;html=1;fontSize=14;entryX=0.132;entryY=-0.027;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="510" y="122" as="sourcePoint" />
+            <mxPoint x="510.4000000000001" y="209.29999999999995" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="6PhLNVi6m-bx_EunW-_f-3" value="Правила вывода" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=14;" connectable="0" vertex="1" parent="6PhLNVi6m-bx_EunW-_f-2">
+          <mxGeometry x="-0.469" y="-3" relative="1" as="geometry">
+            <mxPoint y="-23" as="offset" />
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="Ywbsu9gzcCttF3t6kvx5" name="algo">
+    <mxGraphModel grid="1" page="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" pageScale="1" pageWidth="3300" pageHeight="4681" math="0" shadow="0">
+      <root>
+        <mxCell id="R26u_-_viLFy-ZFwvq6J-0" />
+        <mxCell id="R26u_-_viLFy-ZFwvq6J-1" parent="R26u_-_viLFy-ZFwvq6J-0" />
+        <mxCell id="yftM7oSfWawbKA5fqi1p-7" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;endArrow=none;endFill=0;fontSize=13;" edge="1" parent="R26u_-_viLFy-ZFwvq6J-1" source="yftM7oSfWawbKA5fqi1p-2" target="yftM7oSfWawbKA5fqi1p-6">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="425" y="210" as="sourcePoint" />
+            <mxPoint x="425" y="680" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="yftM7oSfWawbKA5fqi1p-3" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;endArrow=none;endFill=0;fontSize=13;" edge="1" parent="R26u_-_viLFy-ZFwvq6J-1" source="_F1ijboPPkmt2_Srns8M-1" target="yftM7oSfWawbKA5fqi1p-2">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="425" y="110" as="sourcePoint" />
+            <mxPoint x="425" y="740" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="pJmwn9w-iXQd0RFHNeZJ-15" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;endArrow=none;endFill=0;fontSize=13;" edge="1" parent="R26u_-_viLFy-ZFwvq6J-1" source="yftM7oSfWawbKA5fqi1p-6" target="pJmwn9w-iXQd0RFHNeZJ-14">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="_F1ijboPPkmt2_Srns8M-1" value="Начало" style="rounded=1;whiteSpace=wrap;html=1;arcSize=50;fontSize=13;" vertex="1" parent="R26u_-_viLFy-ZFwvq6J-1">
+          <mxGeometry x="330" y="80" width="190" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="pJmwn9w-iXQd0RFHNeZJ-1" value="cur_velocity = &amp;nbsp;initial_auto_velocity;&lt;br&gt;dt = 1" style="rounded=0;whiteSpace=wrap;html=1;fontSize=13;" vertex="1" parent="R26u_-_viLFy-ZFwvq6J-1">
+          <mxGeometry x="320" y="330" width="210" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="pJmwn9w-iXQd0RFHNeZJ-7" value="Цикл i от 1 до окончания модельного времени" style="shape=loopLimit;whiteSpace=wrap;html=1;fontSize=13;" vertex="1" parent="R26u_-_viLFy-ZFwvq6J-1">
+          <mxGeometry x="320" y="380" width="210" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="pJmwn9w-iXQd0RFHNeZJ-9" value="diff = cur_distance - prev_distance" style="rounded=0;whiteSpace=wrap;html=1;fontSize=13;" vertex="1" parent="R26u_-_viLFy-ZFwvq6J-1">
+          <mxGeometry x="320" y="430" width="210" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="pJmwn9w-iXQd0RFHNeZJ-10" value="cur_velocity += velocity_change;&lt;br&gt;prev_distance = cur_distance;" style="rounded=0;whiteSpace=wrap;html=1;fontSize=13;" vertex="1" parent="R26u_-_viLFy-ZFwvq6J-1">
+          <mxGeometry x="320" y="540" width="210" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="pJmwn9w-iXQd0RFHNeZJ-11" value="cur_distance += (leader_velocities[i] - cur_velocity) * dt" style="rounded=0;whiteSpace=wrap;html=1;fontSize=13;" vertex="1" parent="R26u_-_viLFy-ZFwvq6J-1">
+          <mxGeometry x="320" y="580" width="210" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="pJmwn9w-iXQd0RFHNeZJ-12" value="" style="shape=loopLimit;whiteSpace=wrap;html=1;rotation=-180;fontSize=13;" vertex="1" parent="R26u_-_viLFy-ZFwvq6J-1">
+          <mxGeometry x="320" y="630" width="210" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="pJmwn9w-iXQd0RFHNeZJ-13" value="Цикл i от 1&amp;nbsp;до окончания &lt;br&gt;модельного времени" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=13;" vertex="1" parent="R26u_-_viLFy-ZFwvq6J-1">
+          <mxGeometry x="335" y="625" width="180" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="pJmwn9w-iXQd0RFHNeZJ-14" value="Конец" style="rounded=1;whiteSpace=wrap;html=1;arcSize=50;fontSize=13;" vertex="1" parent="R26u_-_viLFy-ZFwvq6J-1">
+          <mxGeometry x="330" y="680" width="190" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="yftM7oSfWawbKA5fqi1p-1" value="задать начальное &amp;nbsp;расстояние между ТС&amp;nbsp;initial_distance" style="rounded=0;whiteSpace=wrap;html=1;fontSize=13;" vertex="1" parent="R26u_-_viLFy-ZFwvq6J-1">
+          <mxGeometry x="320" y="130" width="210" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="yftM7oSfWawbKA5fqi1p-2" value="&lt;font style=&quot;font-size: 13px;&quot;&gt;задать начальную скорость автопилота: initial_auto_velocity&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;fontSize=13;" vertex="1" parent="R26u_-_viLFy-ZFwvq6J-1">
+          <mxGeometry x="320" y="180" width="210" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="yftM7oSfWawbKA5fqi1p-4" value="&lt;font style=&quot;font-size: 13px;&quot;&gt;сгенерировать массив скоростей лидера: leader_velocities&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;fontSize=13;" vertex="1" parent="R26u_-_viLFy-ZFwvq6J-1">
+          <mxGeometry x="320" y="230" width="210" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="yftM7oSfWawbKA5fqi1p-5" value="cur_distance = prev_distance =&amp;nbsp;initial_distance" style="rounded=0;whiteSpace=wrap;html=1;fontSize=13;" vertex="1" parent="R26u_-_viLFy-ZFwvq6J-1">
+          <mxGeometry x="320" y="280" width="210" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="yftM7oSfWawbKA5fqi1p-6" value="velocity_change = FS.compute(cur_distance, diff)" style="shape=process;whiteSpace=wrap;html=1;backgroundOutline=1;" vertex="1" parent="R26u_-_viLFy-ZFwvq6J-1">
+          <mxGeometry x="320" y="480" width="210" height="40" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

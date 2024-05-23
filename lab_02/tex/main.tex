@@ -1,0 +1,648 @@
+\documentclass[12pt]{report}
+\usepackage[utf8]{inputenc}
+\usepackage[russian]{babel}
+%\usepackage[14pt]{extsizes}
+\usepackage{listings}
+\usepackage{graphicx}
+\usepackage{amsmath,amsfonts,amssymb,amsthm,mathtools} 
+\usepackage{pgfplots}
+\usepackage{filecontents}
+\usepackage{indentfirst}
+\usepackage{eucal}
+\usepackage{amsmath}
+\usepackage{enumitem}
+\frenchspacing
+
+\usepackage{indentfirst} % Красная строка
+
+
+%\usetikzlibrary{datavisualization}
+%\usetikzlibrary{datavisualization.formats.functions}
+
+\usepackage{amsmath}
+
+
+
+
+% Для листинга кода:
+\lstset{ %
+language=haskell,                 % выбор языка для подсветки (здесь это С)
+basicstyle=\small\sffamily, % размер и начертание шрифта для подсветки кода
+numbers=left,               % где поставить нумерацию строк (слева\справа)
+numberstyle=\tiny,           % размер шрифта для номеров строк
+stepnumber=1,                   % размер шага между двумя номерами строк
+numbersep=5pt,                % как далеко отстоят номера строк от подсвечиваемого кода
+showspaces=false,            % показывать или нет пробелы специальными отступами
+showstringspaces=false,      % показывать или нет пробелы в строках
+showtabs=false,             % показывать или нет табуляцию в строках
+frame=single,              % рисовать рамку вокруг кода
+tabsize=2,                 % размер табуляции по умолчанию равен 2 пробелам
+captionpos=t,              % позиция заголовка вверху [t] или внизу [b] 
+breaklines=true,           % автоматически переносить строки (да\нет)
+breakatwhitespace=false, % переносить строки только если есть пробел
+escapeinside={\#*}{*)}   % если нужно добавить комментарии в коде
+}
+
+\usepackage[left=2cm,right=2cm, top=2cm,bottom=2cm,bindingoffset=0cm]{geometry}
+% Для измененных титулов глав:
+\usepackage{titlesec, blindtext, color} % подключаем нужные пакеты
+\definecolor{gray75}{gray}{0.75} % определяем цвет
+\newcommand{\hsp}{\hspace{20pt}} % длина линии в 20pt
+% titleformat определяет стиль
+\titleformat{\chapter}[hang]{\Huge\bfseries}{\thechapter\hsp\textcolor{gray75}{|}\hsp}{0pt}{\Huge\bfseries}
+
+
+% plot
+\usepackage{pgfplots}
+\usepackage{filecontents}
+\usetikzlibrary{datavisualization}
+\usetikzlibrary{datavisualization.formats.functions}
+\RequirePackage[
+  style=gost-numeric,
+  language=auto,
+  autolang=other,
+  sorting=none,
+]{biblatex}
+
+\addbibresource{bib.bib}
+\begin{document}
+%\def\chaptername{} % убирает "Глава"
+\thispagestyle{empty}
+\begin{titlepage}
+	\noindent \begin{minipage}{0.15\textwidth}
+	\includegraphics[width=\linewidth]{b_logo}
+	\end{minipage}
+	\noindent\begin{minipage}{0.9\textwidth}\centering
+		\textbf{Министерство науки и высшего образования Российской Федерации}\\
+		\textbf{Федеральное государственное бюджетное образовательное учреждение высшего образования}\\
+		\textbf{~~~«Московский государственный технический университет имени Н.Э.~Баумана}\\
+		\textbf{(национальный исследовательский университет)»}\\
+		\textbf{(МГТУ им. Н.Э.~Баумана)}
+	\end{minipage}
+	
+	\noindent\rule{18cm}{3pt}
+	\newline\newline
+	\noindent ФАКУЛЬТЕТ $\underline{\text{«Информатика и системы управления»}}$ \newline\newline
+	\noindent КАФЕДРА $\underline{\text{«Программное обеспечение ЭВМ и информационные технологии»}}$\newline\newline\newline\newline\newline
+	
+	
+	\begin{center}
+		\noindent\begin{minipage}{1.3\textwidth}\centering
+			\Large\textbf{  Отчёт по лабораторной работе №2 по дисциплине}\newline
+			\textbf{ "Основы искусственного интеллекта"}\newline\newline
+		\end{minipage}
+	\end{center}
+	
+	\noindent\textbf{Тема} $\underline{\text{Нечёткая лабораторная работа}}$\newline\newline
+	\noindent\textbf{Студент} $\underline{\text{Варламова Е. А.}}$\newline\newline
+	\noindent\textbf{Группа} $\underline{\text{ИУ7-13М}}$\newline\newline
+	\noindent\textbf{Оценка (баллы)} $\underline{\text{~~~~~~~~~~~~~~~~~~~~~~~~~~~}}$\newline\newline
+	\noindent\textbf{Преподаватели} $\underline{\text{Строганов Ю.В.}}$\newline\newline\newline
+	
+	\begin{center}
+		\vfill
+		Москва~---~\the\year
+		~г.
+	\end{center}
+\end{titlepage}
+\large
+\setcounter{page}{2}
+\def\contentsname{СОДЕРЖАНИЕ}
+\renewcommand{\contentsname}{СОДЕРЖАНИЕ}
+\tableofcontents
+\renewcommand\labelitemi{---}
+\newpage
+\chapter*{Введение}
+\addcontentsline{toc}{chapter}{ВВЕДЕНИЕ}
+
+Нечеткая логика -- это раздел математики, который был разработан для описания нечетких и неопределенных понятий в реальном мире. 
+Она была создана в 1965 году Лотфи Заде, который предложил новый подход к моделированию нечетких систем. 
+Нечеткая логика нашла широкое применение в различных областях, таких как управление, искусственный интеллект, экономика, медицина и другие. 
+Ее основное преимущество заключается в возможности работать с нечеткими и неопределенными данными, которые не могут быть точно определены с помощью классической логики.
+
+
+Целью данной лабораторной работы является создание системы для следования при отсутствии данных о скорости <<лидера>>, но с известным расстоянием до него с помощью аппарата нечёткой логики.
+Для этого необходимо решить следующие задачи:
+\begin{itemize}
+    \item привести содержательную постановку задачи;
+    \item описать общие этапы нечёткого логического вывода;
+    \item описать алгоритм вывода Цукомото;
+    \item описать алгоритмы дефаззификации;
+    \item предложить функции принадлежности и правила для нечёткого логического вывода;
+    \item разработать алгоритм работы автопилота;
+    \item привести особенности реализации ПО, решающего поставленную задачу;
+    \item провести исследование зависимости результатов работы ПО (среднеквадратичная ошибка, время вычислений) от моделируемого времени работы системы.
+\end{itemize}
+
+\chapter{Аналитическая часть}
+
+\section{Содержательная постановка задачи}
+Есть два автомобиля в двумерном пространстве: один под управлением пользователя (<<лидер>>), другой -- автопилота.
+Пользователь может изменять параметр скорости своего автомобиля, автопилот должен следовать за "лидером" строго на заданной дистанции.
+
+Необходимо создать систему для следования, при отсутствии данных о скорости "лидера", но с известным расстоянием до него.
+
+\section{Формализация задачи}
+
+Формализация задачи в виде IDEF0-диаграммы изображена на рисунке \ref{fig:idef0}.
+
+\begin{figure}[h]
+  \centering
+  \includegraphics[scale = 1]{idef0.pdf}
+  \caption{IDEF0-диаграмма задачи}
+  \label{fig:idef0}
+\end{figure}
+\section{Общие этапы нечёткого логического вывода}
+\begin{enumerate}
+    \item сформировать на естественном языке импликативные правила, отражающие зависимости, которые действуют в предметной области;
+    \item выделить из правил лингвистические переменные;
+    \item определить их значения;
+    \item сопоставить каждой переменной нечёткое множество значений;
+    \item формализовать правила из п. 1 с помощью переменных из п. 2;
+    \item проверить базу правил на полноту, то есть проверить, что:
+    \begin{itemize}
+        \item для каждого значения выходных переменных должно быть хотя бы одно правило;
+        \item для каждой входной лингвистической переменной и каждого ее значения должно быть хотя бы одно правило, в котором это значение стоит в основании импликации.
+    \end{itemize}
+    \item оценить степень принадлежности каждого входного значения к каждому нечеткому множеству (фаззификация);
+    \item применить нечеткие правила для определения степени принадлежности каждого выходного значения к каждому нечеткому множеству (фаззификация);
+    \item агрегировать степени принадлежности выходных значений для получения одного значения для каждой выходной переменной (агрегация);
+    \item применить операции дефаззификации для получения конкретных значений выходных переменных (дефаззификация).
+\end{enumerate}
+
+Таким образом, общая последовательность логического вывода на основе сформированной базы правил состоит из 3 этапов:
+\begin{itemize}
+    \item фаззификация;
+    \item агрегация;
+    \item дефаззификация.
+\end{itemize}
+
+\section{Алгоритм нечёткого вывода Цукомото}
+Алгоритм состоит из следующих этапов \cite{bib:7}:
+\begin{enumerate}
+    \item введение нечёткости;
+    \item агрегирование степеней истинности предпосылок по каждому из правил;
+    \item активизация заключений по каждому из правил -- в результате находятся четкие значения выходных переменных в каждом из заключений правил;
+    \item этап аккумулирования активизированных заключений правил в данном алгоритме отсутствует вследствие четких значений выходных переменных;
+    \item в качестве метода дефаззификации в алгоритме Цукамото используется разновидность метода центра тяжести для одноточечных множеств, позволяющий осуществить приведение к четкости выходной переменной без предварительного аккумулирования активизированных заключений отдельных правил.
+\end{enumerate}
+
+\section{Алгоритмы дефаззификации}
+\subsection{Алгоритм центра тяжести}
+
+Дефаззификация алгоритмом центра тяжести осуществляется по формуле \ref{hash}.
+\begin{equation}
+	\label{hash}
+	y = \frac{\int_{min}^{max} x \cdot \mu(x)dx}{\int_{min}^{max} \mu(x)dx},
+\end{equation}
+где $y$ -- результат дефазификации, $x$ -- переменная, соответствующая выходной лингвистической переменной, $\mu(x)$ -- функция принадлежности нечеткого множества, соответствующего выходной переменной после этапа аккумуляции, $min$ и $max$ -- левая и правая точки интервала носителя нечеткого множества рассматриваемой выходной переменной.
+
+\subsection{Алгоритм среднего}
+
+Дефазификация алгоритмом среднего осуществляется по формуле \ref{hash2}.
+
+\begin{equation}
+	\label{hash2}
+	y = \frac{\sum_{i = 1}^{n}x_i}{n} ,
+\end{equation}
+где $n$ -- количество точек выходной переменной, $\mu(x)$ -- функция принадлежности нечеткого множества, соответствующего выходной переменной после этапа аккумуляции.
+
+
+
+\section*{Вывод}
+\addcontentsline{toc}{section}{Вывод}
+В данном разделе была приведена содержательная постановка задачи и ее формализация, были описаны общие этапы нечёткого логического вывода, а также приведены 2 алгоритма дефаззификации и алгоритм нечёткого вывода Цукомото.
+\clearpage
+
+\chapter{Конструкторская часть}
+\section{Формирование базы правил}
+\subsection{Описание переменных}
+Для решения поставленной задачи предлагается ввести следующие лингвистические переменные:
+\begin{itemize}
+    \item входная переменная -- расстояние между лидером и пилотируемым транспортным средством;
+    \item входная переменная -- изменение расстояния между лидером и пилотируемым траспортным средством;
+    \item выходная переменная -- значение изменения скорости пиотируемого траспортного средства.
+\end{itemize}
+
+\subsection{Функции принадлежности}
+Опишем функции принадлежности каждой из переменных.
+
+\subsubsection{Переменная расстояния между лидером и пилотируемым транспортным средством}
+Требуемым расстоянием называется расстояние, которое необходимо соблюдать между пилотируемым транспортным средством и лидером. В данной работе оно принято за 100. 
+
+Под функцией Gaussian(a, b) понимается функция Гаусса, где a -- математическое ожидание, b -- среднеквадратичное отклонение.
+
+Переменной дано имя distance.
+Функция принадлежности для переменной distance представлена в таблице \ref{table:distance}. 
+Визуализация функции принадлежности для переменной distance представлена на рисунке \ref{fig:var_dist}.
+\newpage
+
+\begin{table} [h!]
+	\caption{Переменная distance} 
+ \label{table:distance}
+	\begin{center}
+	\begin{tabular}{|c c c|}
+\hline название  & описание  & функция \\
+\hline less & расстояние меньше требуемого & Gaussian(25, 30) \\
+\hline normal & расстояние в пределах требуемого & Gaussian(100, 15) \\
+\hline more & расстояние больше требуемого & Gaussian(175, 30) \\
+\hline
+	\end{tabular}
+	\end{center}
+\end{table}
+
+
+\begin{figure}[h!]
+  \centering
+  \includegraphics[width = \linewidth]{variable_distance.pdf}
+  \caption{Функция принадлежности для переменной distance}
+  \label{fig:var_dist}
+\end{figure}
+
+\subsubsection{Переменная изменения скорости пиотируемого траспортного средства}
+Под функцией Gaussian(a, b) понимается функция Гаусса, где a -- математическое ожидание, b -- среднеквадратичное отклонение.
+
+Переменной дано имя distance\_change. 
+Функция принадлежности для переменной distance\_change представлена в таблице  \ref{table:distance_ch}.
+
+\begin{table} [h!]
+	\caption{Переменная distance\_change} 
+ \label{table:distance_ch}
+	\begin{center}
+	\begin{tabular}{|c c c|}
+\hline название  & описание  & функция \\
+\hline to\_leader & направление изменения & Gaussian(-50, 20) \\
+  &  расстояния -- к лидеру  &  \\
+
+\hline same & расстояние не меняется & Gaussian(0, 10) \\
+\hline from\_leader & направление изменения & Gaussian(50,20) \\
+  &  расстояния -- от лидера  &  \\
+\hline
+	\end{tabular}
+	\end{center}
+\end{table}
+
+Визуализация функции принадлежности для переменной distance\_change представлена на рисунке \ref{fig:var_dist_ch}.
+
+\begin{figure}[h!]
+  \centering
+  \includegraphics[width = \linewidth]{variable_distance_change.pdf}
+  \caption{Функция принадлежности для переменной distance\_change}
+  \label{fig:var_dist_ch}
+\end{figure}
+
+\subsubsection{Переменная изменения расстояния между лидером и пилотируемым траспортным средством}
+Под функцией Polygon(a, b, c) понимается функция треугольного вида (состоящая из двух прямых), где a, b, c -- точки, определяющие эти прямые. 
+
+Под функцией Trapezoid(a, b, c, d) понимается трапецевидная функция (состоящая из трех прямых), где a, b, c, d -- точки, определяющие эти прямые. 
+
+Переменной дано имя autopilot\_control. 
+Функция принадлежности для переменной autopilot\_control представлена в таблице \ref{table:vel}.
+
+\begin{table} [h!]
+	\caption{Переменная autopilot\_control} 
+ \label{table:vel}
+	\begin{center}
+	\begin{tabular}{|c c c|}
+\hline название  & описание  & функция \\
+\hline slowdown & уменьшить скорость & Polygon((-50,1), (-25,1), (-5,0)) \\
+\hline maintain\_speed & оставить скорость & Trapezoid((-10,0), (-5,1), (5,1), (10,0)) \\
+\hline speed\_up & увеличить скорость & Polygon((5,0), (25,1), (50,1)) \\
+\hline
+	\end{tabular}
+	\end{center}
+\end{table}
+
+Визуализация функции принадлежности для переменной autopilot\_control представлена на рисунке \ref{fig:var_vel}.
+
+\begin{figure}[h!]
+  \centering
+  \includegraphics[scale = 0.65]{variable_autopilot_control.pdf}
+  \caption{Функция принадлежности для переменной autopilot\_control}
+  \label{fig:var_vel}
+\end{figure}
+
+
+\subsection{Правила для нечёткого логического вывода}
+Для нечёткого логического вывода предлагаются следующие правила, отвечающие специфике предметной области:
+
+\begin{table} [h!]
+	\caption{Правила вывода} 
+ \label{table:vel}
+	\begin{center}
+	\begin{tabular}{|c c|}
+\hline если  & то  \\
+\hline distance = less & autopilot\_control = slowdown \\
+\hline distance = normal and distance\_change = to\_leader & autopilot\_control = slowdown \\
+\hline distance = normal and distance\_change = same & autopilot\_control = maintain\_speed \\
+\hline distance = normal and distance\_change = from\_leader & autopilot\_control = speed\_up \\
+\hline distance = more & autopilot\_control = speed\_up \\
+\hline
+	\end{tabular}
+	\end{center}
+\end{table}
+
+\section{Алгоритм автопилота}
+Разработанный алгоритм автопилота, использующий нечеткую систему для определения изменения скорости ТС, представлен на рисунке \ref{fig:algo}.
+
+\begin{figure}[h!]
+  \centering
+  \includegraphics[scale = 0.9]{algo.pdf}
+  \caption{Алгоритм автопилота}
+  \label{fig:algo}
+\end{figure}
+
+\section*{Вывод}
+\addcontentsline{toc}{section}{Вывод}
+В данном разделе были описаны переменные нечёткой системы, используемой для решения задачи, были предложены их функции принадлежности, а также разработаны на основе знаний о предметной области нечёткие правила вывода. 
+Кроме того, был разработан алгоритм автопилота, использующий нечёткую систему для определения изменения скорости ТС.
+
+\chapter{Технологическая часть}
+
+\section{Выбор средств разработки}
+В качестве языка программирования был использован язык Python, поскольку этот язык кроссплатформенный и для него разработано огромное количество библиотек и модулей, решающих разнообразные задачи. 
+
+В частности, имеются библиотеки, включающие в себя алгоритмы для нечётких систем. 
+В данной работе была использована библиотека <<fuzzypython>> \cite{bib:2}, поскольку в отличие от многих других библиотек, имеющих схожую функциональность, в <<fuzzypython>> реализован алгоритм нечёткого вывода Цукомото.
+
+Для создания графиков была выбрана библиотека matplotlib \cite{bib:14}, доступная на языке Python, так как она предоставляет удобный интерфейс для работы с данными и их визуализации.
+
+\section{Листинг ПО}
+На основе алгоритма автопилота, разработанного в конструкторской части, а также нечёткой системы из <<fuzzypython>>, детали формирования базы правил для которой были описаны в конструкторской части, было разработано ПО, решающее поставленную задачу. 
+В листинге \ref{lst:dt} представлена реализация решения поставленной задачи.
+
+\begin{lstlisting}[label=lst:dt,caption=Реализация решения поставленной задачи]
+from adjective import Adjective
+from fsets.polygon import Polygon
+from fsets.gaussian import Gaussian
+from fsets.trapezoid import Trapezoid
+from ruleblock import RuleBlock
+from systems.tsukamoto import TsukamotoSystem
+from variable import Variable
+import time
+import numpy as np
+import matplotlib.pyplot as plt
+from matplotlib.backends.backend_pdf import PdfPages
+import random
+def DrawVarFuncs(fs, interval, labs, title):
+    fig = plt.figure(figsize=(10, 6))
+    x = np.linspace(interval[0], interval[1], 1000)
+    for i in range(len(labs)):
+        
+        y = [fs[i](j) for j in x]
+        plt.plot(x, y, label=labs[i])
+    plt.legend()
+    plt.xlabel(title)
+    plt.ylabel("степень принадлежности")
+    pdf = PdfPages('img/variable_' + title + ".pdf")
+    pdf.savefig(fig)
+    pdf.close()
+    plt.clf()
+def DrawResult(n_it, auto_velocities, leader_velocities):
+    fig = plt.figure(figsize=(10, 6))
+    x = [i for i in range(n_it)]
+
+    plt.plot(x, auto_velocities, label='автопилот')
+    plt.plot(x, leader_velocities, label='лидер')
+
+    plt.grid()
+    plt.xlabel("Модельное время")
+    plt.ylabel("Скорость, м/с")
+
+    plt.legend()
+    pdf = PdfPages('img/' + "result_" + str(n_it) + "_iters.pdf")
+    pdf.savefig(fig)
+    pdf.close()
+    plt.clf()
+def PrintResultTable(iters, times, stds):
+    for i in range(len(iters)):
+        print("\hline {} & {:.2f} & {:.2f} \\\\".format(iters[i], times[i], stds[i]))
+def CreateSystem():
+    # Определение переменных
+    ## distance
+    less_func = Gaussian(25, 30)
+    less = Adjective('less', less_func )
+    normal_func = Gaussian(100, 15)
+    normal = Adjective('normal', normal_func )
+    more_func = Gaussian(175, 30)
+    more = Adjective('more', more_func )
+    
+    distance = Variable('distance', 'km', less, normal, more)
+    DrawVarFuncs([less_func, normal_func, more_func],
+                  [-50, 250],
+                  ['less', 'normal', 'more'],
+                  'distance')
+
+    ## distance_change
+    to_leader_func = Gaussian(-50, 20)
+    to_leader = Adjective('to_leader', to_leader_func )
+    same_func = Gaussian(0, 10)
+    same = Adjective('same', same_func )
+    from_leader_func = Gaussian(50,20)
+    from_leader = Adjective('from_leader', from_leader_func )
+    
+    distance_change = Variable('distance_change', 'km', to_leader, same, from_leader )
+    
+    DrawVarFuncs([to_leader_func, same_func, from_leader_func],
+                  [-100, 100],
+                  ['to_leader', 'same', 'from_leader'],
+                  'distance_change')
+
+    
+    ## autopilot_control
+    slowdown_func = Polygon((-50,1), (-25,1), (-5,0))
+    slowdown = Adjective('slowdown', slowdown_func )
+    maintain_speed_func = Trapezoid((-10,0), (-5,1), (5,1), (10,0))
+    maintain_speed = Adjective('maintain_speed',  maintain_speed_func)
+    speed_up_func = Polygon((5,0), (25,1), (50,1))
+    speed_up = Adjective('speed_up',speed_up_func)
+          
+    autopilot_control = Variable('autopilot_control', 'km', slowdown, maintain_speed, speed_up)
+    DrawVarFuncs([slowdown_func, maintain_speed_func, speed_up_func],
+                  [-50, 50],
+                  ['slowdown', 'maintain_speed', 'speed_up'],
+                  'autopilot_control')
+    scope = locals()
+
+    # Создание блока правил
+    block = RuleBlock('autopilot_control', operators=('MIN', 'MAX', 'ZADEH'), activation='MIN')
+
+    r1 = 't:if distance is less then autopilot_control is slowdown'
+    r2 = 't:if distance_change is to_leader and distance is normal then autopilot_control is slowdown'
+    r3 = 't:if distance_change is same and distance is normal then autopilot_control is maintain_speed'
+    r4 = 't:if distance_change is from_leader and distance is normal then autopilot_control is speed_up'
+    r5 = 't:if distance is more then autopilot_control is speed_up'
+    
+    block.add_rules(r1, r2, r3, r4, r5, scope = scope)
+    # Создание системы
+    tsukamoto = TsukamotoSystem('auto_pilot_system', block)
+    return tsukamoto
+
+
+#n_it_arr = list(map(int, np.linspace(20, 500, 50)))
+
+n_it_arr = [10, 100,200, 500, 1000]
+time_work = []
+std_arr = []
+
+dt = 1 
+initial_distance = 50
+initial_auto_velocity = 20 
+initial_leader_velocity = 50
+
+leader_velocities = []
+auto_velocities = []
+system = CreateSystem()
+for n_it in n_it_arr:
+    time_start = time.time()
+    leader_velocities = initial_leader_velocity + 20 * np.sin(np.linspace(0, 10, n_it))
+    #leader_velocities = [initial_leader_velocity] * n_it
+    
+    auto_velocities = []
+    
+    prev_distance = cur_distance = initial_distance
+    cur_velocity = initial_auto_velocity
+
+    for i in range(n_it):
+        auto_velocities.append(cur_velocity)
+        velocity_change = system.compute({'distance': cur_distance, 'distance_change': cur_distance - prev_distance})['autopilot_control']
+
+        cur_velocity += velocity_change
+
+        prev_distance = cur_distance
+        cur_distance += (leader_velocities[i] - cur_velocity) * dt
+
+    time_work.append(time.time() - time_start)
+    std_arr.append(np.sqrt(np.std(np.array(auto_velocities) - np.array(leader_velocities))))
+
+    DrawResult(n_it, auto_velocities, leader_velocities)
+##fig = plt.figure(figsize=(10, 6))
+##plt.plot(n_it_arr, time_work)
+##plt.xlabel("Модельное время")
+##plt.ylabel("Реальное время (с)")
+##pdf = PdfPages('img/' + "result_time.pdf")
+##pdf.savefig(fig)
+##pdf.close()
+##plt.clf()
+##
+##fig = plt.figure(figsize=(10, 6))
+##plt.plot(n_it_arr, std_arr)
+##plt.xlabel("Модельное время")
+##plt.ylabel("СКО")
+##pdf = PdfPages('img/' + "result_std.pdf")
+##pdf.savefig(fig)
+##pdf.close()
+##plt.clf()
+PrintResultTable(n_it_arr, time_work, std_arr)
+\end{lstlisting}
+
+\section{Пример работы с постоянной скоростью лидера}
+Зададим:
+\begin{itemize}
+    \item начальную скорость автопилота, равную 20 м/с;
+    \item начальную скорость лидера, равную 50 м/с;
+    \item начальную дистанцию, равную 50м.
+\end{itemize}
+
+Скорость лидера положим постоянной.
+
+Результат работы за 100 единиц модельного времени представлен на рисунке \ref{fig:const_leader}.
+
+\begin{figure}[h!]
+  \centering
+  \includegraphics[scale = 0.6]{result_const_leader.pdf}
+  \caption{Результат для постоянной скорости лидера}
+  \label{fig:const_leader}
+\end{figure}
+
+\section{Пример работы с изменяющейся по sin скоростью лидера}
+Зададим:
+\begin{itemize}
+    \item начальную скорость автопилота, равную 20 м/с;
+    \item начальную скорость лидера, равную 50 м/с;
+    \item начальную дистанцию, равную 50м.
+\end{itemize}
+
+Скорость лидера будем изменять по закону синуса.
+
+Результат работы за 100 единиц модельного времени представлен на рисунке \ref{fig:sin_leader}.
+
+\begin{figure}[h!]
+  \centering
+  \includegraphics[scale = 0.62]{result_sin_leader.pdf}
+  \caption{Результат с изменяющейся по sin скоростью лидера (100c)}
+  \label{fig:sin_leader}
+\end{figure}
+\newpage
+Результат работы за 1000 единиц модельного времени представлен на рисунке \ref{fig:sin_leader_1000}.
+
+\begin{figure}[h!]
+  \centering
+  \includegraphics[scale = 0.62]{result_sin_leader_1000.pdf}
+  \caption{Результат с изменяющейся по sin скоростью лидера (1000c)}
+  \label{fig:sin_leader_1000}
+\end{figure}
+\section*{Вывод}
+\addcontentsline{toc}{section}{Вывод}
+В данном разделе были обоснованы средства реализации ПО, реализовано ПО, решающее поставленную задачу, и приведены примеры его работы.
+
+\chapter{Исследовательская часть}
+
+\section{Исследование зависимости результатов работы ПО от моделируемого времени работы системы}
+
+Под моделируемым временем работы системы имеется в виду количество модельных секунд, в течение которых моделируемая автопилотируемая система принимала решения об изменении скорости транспортного средства. 
+Предполагается, что система принимает решения каждую секунду. 
+
+Под результатами работы системы имеются в виду следующие характеристики:
+\begin{itemize}
+    \item время работы -- реальное время работы ПО;
+    \item среднеквадратичное отклонение скорости автопилота от скорости лидера за всё время работы системы.
+\end{itemize}
+
+Для исследования были использованы те же начальные условия, что в примере работы с изменяющейся по sin скоростью лидера в технологической части: 
+\begin{itemize}
+    \item начальную скорость автопилота, равная 20 м/с;
+    \item начальную скорость лидера, равная 50 м/с;
+    \item начальную дистанцию, равная 50м.
+\end{itemize}
+
+Результаты исследования приведены на рисунках \ref{fig:res_time} и \ref{fig:res_std} .
+
+\newpage
+\begin{figure}[h!]
+  \centering
+  \includegraphics[scale = 0.5]{result_time.pdf}
+  \caption{Результат по времени работы}
+  \label{fig:res_time}
+\end{figure}
+
+\begin{figure}[h!]
+  \centering
+  \includegraphics[scale = 0.5]{result_std.pdf}
+  \caption{Результат по СКО}
+  \label{fig:res_std}
+\end{figure}
+
+\section*{Вывод}
+\addcontentsline{toc}{section}{Вывод}
+В данном разделе было проведено исследование зависимости результатов работы ПО от моделируемого времени работы системы. Как и ожидалось, время работы растёт с увеличением моделируемого времени работы. При этом СКО с увеличением моделируемого времени уменьшается.
+
+\chapter*{ЗАКЛЮЧЕНИЕ}
+\addcontentsline{toc}{chapter}{ЗАКЛЮЧЕНИЕ}
+Целью данной лабораторной работы являлось создание системы для следования при отсутствии данных о скорости <<лидера>>, но с известным расстоянием до него с помощью аппарата нечёткой логики. 
+Цель была достигнута, при этом были решены следующие задачи:
+\begin{itemize}
+    \item приведена содержательную постановку задачи;
+    \item описаны общие этапы нечёткого логического вывода;
+    \item описан алгоритм вывода Цукомото;
+    \item описан алгоритмы дефаззификации;
+    \item предложены функции принадлежности и правила для нечёткого логического вывода;
+    \item разработан алгоритм работы автопилота;
+    \item приведены особенности реализации ПО, решающего поставленную задачу;
+    \item проведено исследование зависимости результатов работы ПО (среднеквадратичная ошибка, время вычислений) от моделируемого времени работы системы.
+\end{itemize}
+
+\printbibliography[title={СПИСОК ИСПОЛЬЗОВАННЫХ\\ ИСТОЧНИКОВ}]
+\addcontentsline{toc}{chapter}{СПИСОК ИСПОЛЬЗОВАННЫХ ИСТОЧНИКОВ}
+
+\end{document}
